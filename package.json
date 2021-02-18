@@ -1,0 +1,22 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "A GOOD website. 11ty 1t-y  1t 1t1yty",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
+    "dart-sass": "^1.25.0",
+    "html-minifier": "^4.0.0",
+    "postcss": "^8.2.6",
+    "postcss-csso": "^5.0.0",
+    "postcss-preset-env": "^6.7.0"
+  }
+}

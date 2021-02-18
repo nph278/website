@@ -1,0 +1,20 @@
+---
+tags: section
+title: Blog
+---
+
+<p>
+  This is a great blog. The posts:
+</p>
+
+<ul>
+  {% for post in collections.post %}
+    <li>
+      <a href="{{post.url}}"
+      {% if page.url == post.url %}
+      aria-current="page"
+      {% endif %}
+    >{{post.data.title}}</a>
+    </li>
+  {% endfor %}
+</ul>

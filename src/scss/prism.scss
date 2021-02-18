@@ -1,0 +1,109 @@
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #ccc;
+  background: none;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #2d2d2d;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token {
+  &.comment,
+  &.block-comment,
+  &.prolog,
+  &.doctype,
+  &.cdata {
+    color: #999;
+  }
+
+  &.punctuation {
+    color: #ccc;
+  }
+
+  &.tag,
+  &.attr-name,
+  &.namespace,
+  &.deleted {
+    color: #e2777a;
+  }
+
+  &.function-name {
+    color: #6196cc;
+  }
+
+  &.boolean,
+  &.number,
+  &.function {
+    color: #5991fa;
+  }
+
+  &.property,
+  &.class-name,
+  &.constant,
+  &.symbol {
+    color: #f8c555;
+  }
+
+  &.selector,
+  &.important,
+  &.atrule,
+  &.keyword,
+  &.builtin {
+    color: #cc99cd;
+  }
+
+  &.string,
+  &.char,
+  &.attr-value,
+  &.regex,
+  &.variable {
+    color: #7ec699;
+  }
+
+  &.operator,
+  &.entity,
+  &.url {
+    color: #d2fffe;
+  }
+
+  &.important,
+  &.bold {
+    font-weight: bold;
+  }
+  &.italic {
+    font-style: italic;
+  }
+
+  &.entity {
+    cursor: help;
+  }
+
+  &.inserted {
+    color: green;
+  }
+}

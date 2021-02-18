@@ -1,0 +1,55 @@
+$accent: rgb(48, 48, 230);
+$secondary: rgb(20, 20, 20);
+$primary: rgb(200, 200, 200);
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Ubuntu&display=swap");
+
+/* Resets */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+  background-color: $secondary;
+  color: $primary;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+pre,
+code {
+  font-family: "Fira Code", monospace;
+}
+
+a:visited {
+  color: $primary;
+}
+
+/* Nav */
+
+nav {
+  display: flex;
+
+  a {
+    padding: 0.5rem 1rem;
+    color: $primary;
+
+    &[aria-current="page"] {
+      color: $accent;
+      font-weight: bold;
+    }
+  }
+}
+
+/* Article */
+
+article {
+  margin: 2rem;
+
+  h1 {
+    text-decoration: underline;
+  }
+}

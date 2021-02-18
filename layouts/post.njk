@@ -1,0 +1,21 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}
+  {{ title }} - NPH Blog
+{% endblock %}
+
+{% block body %}
+  <nav>
+    {% for post in collections.post %}
+      <a href="{{post.url}}"
+      {% if page.url == post.url %}
+      aria-current="page"
+      {% endif %}
+    >{{post.data.title}}</a>
+    {% endfor %}
+  </nav>
+  <article>
+    <h1>{{ title }}</h1>
+    {{ content | safe }}
+  </article>
+{% endblock %}

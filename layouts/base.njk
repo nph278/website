@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/prism.css">
+    <title>
+      {% block title %}{% endblock %}
+    </title>
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <nav>
+      {% for post in collections.section %}
+        <a href="{{post.url}}"
+        {% if page.url == post.url %}
+        aria-current="page"
+        {% endif %}
+      >{{post.data.title}}</a>
+      {% endfor %}
+    </nav>
+    {% block body %}{% endblock %}
+  </body>
+</html>
