@@ -24,24 +24,24 @@ code {
   font-family: "Fira Code", monospace;
 }
 
-a:visited {
+a {
+  padding: 0.5rem 1rem;
   color: $primary;
+
+  &[aria-current="page"] {
+    color: $accent;
+    font-weight: bold;
+  }
+
+  &:visited {
+    color: $primary;
+  }
 }
 
 /* Nav */
 
 nav {
   display: flex;
-
-  a {
-    padding: 0.5rem 1rem;
-    color: $primary;
-
-    &[aria-current="page"] {
-      color: $accent;
-      font-weight: bold;
-    }
-  }
 }
 
 /* Article */
