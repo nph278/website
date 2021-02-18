@@ -6,12 +6,12 @@ const postcssCsso = require("postcss-csso");
 const fs = require("fs");
 const fsExtra = require("fs-extra");
 const htmlmin = require("html-minifier");
+const lazyImagesPlugin = require("eleventy-plugin-lazyimages");
 
 module.exports = (eleventyConfig) => {
-  // Copy SCSS to build, before compiling.
-  eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("scss");
-  eleventyConfig.addPassthroughCopy("sass");
+  // Copy images
+
+  eleventyConfig.addPassthroughCopy("src/img");
 
   eleventyConfig.on("beforeBuild", () => {
     const dirs = fs.readdirSync("src/scss");
@@ -42,12 +42,12 @@ module.exports = (eleventyConfig) => {
           );
         });
     });
-    fsExtra.remove("build/scss");
   });
 
-  // Syntax Highlighting
+  // Plugins
 
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(lazyImagesPlugin);
 
   // Minify HTML
 
