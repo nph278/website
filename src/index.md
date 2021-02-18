@@ -3,7 +3,9 @@ tags: section
 title: Home
 ---
 
-This is a web site.
+<img src="/img/pig.png" alt="pig" width="100"/>
+
+This is a my **new** website!
 
 - [this](/)
 - [blog](/blog)
