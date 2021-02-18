@@ -7,15 +7,20 @@ const fs = require("fs");
 const fsExtra = require("fs-extra");
 const htmlmin = require("html-minifier");
 const lazyImagesPlugin = require("eleventy-plugin-lazyimages");
+const rollup = require("rollup");
+const commonjs = require("@rollup/plugin-commonjs");
+const { babel } = require("@rollup/plugin-babel");
+const { terser } = require("rollup-plugin-terser");
+const { nodeResolve } = require("@rollup/plugin-node-resolve");
 
 module.exports = (eleventyConfig) => {
   // Copy images
 
   eleventyConfig.addPassthroughCopy("src/img");
 
-  eleventyConfig.on("beforeBuild", () => {
-    const dirs = fs.readdirSync("src/scss");
-    dirs.forEach((file) => {
+  eleventyConfig.on("beforeBuild", async () => {
+    const sassFiles = fs.readdirSync("src/scss");
+    sassFiles.forEach((file) => {
       // Compile Sass
       let result = sass.renderSync({
         file: `src/scss/${file}`,
@@ -41,6 +46,21 @@ module.exports = (eleventyConfig) => {
             }
           );
         });
+    });
+
+    const bundle = await rollup.rollup({
+      input: `src/js/index.js`,
+      plugins: [nodeResolve(), commonjs(), babel(), terser()],
+    });
+
+    const { output } = await bundle.generate({
+      file: `build/js/bundle.js`,
+      format: "iife",
+    });
+
+    fsExtra.outputFile("build/js/bundle.js", output[0].code, (err) => {
+      if (err) throw err;
+      console.log(`Built JS`);
     });
   });
 
