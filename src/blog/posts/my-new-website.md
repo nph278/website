@@ -3,8 +3,6 @@ title: My new website
 tags: post
 ---
 
-## My new website
-
 This is my new website! Build with [11ty](https://11ty.dev) and [sass (SCSS)](https://sass-lang.com/).
 
 I write the pages in markdown, and the layouts in [Nunjucks](https://mozilla.github.io/nunjucks/templating.html).
