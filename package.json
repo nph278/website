@@ -4,8 +4,8 @@
   "description": "A GOOD website. 11ty 1t-y  1t 1t1yty",
   "main": "index.js",
   "scripts": {
-    "build": "eleventy",
-    "dev": "eleventy --serve"
+    "build": "rollup -c && eleventy",
+    "dev": "concurrently \"rollup -c -w\" \"eleventy --serve\""
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,7 @@
     "@babel/preset-env": "^7.12.17",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-node-resolve": "^11.2.0",
+    "concurrently": "^5.3.0",
     "dart-sass": "^1.25.0",
     "eleventy-plugin-lazyimages": "^2.1.0",
     "html-minifier": "^4.0.0",

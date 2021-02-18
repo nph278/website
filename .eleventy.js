@@ -7,11 +7,6 @@ const fs = require("fs");
 const fsExtra = require("fs-extra");
 const htmlmin = require("html-minifier");
 const lazyImagesPlugin = require("eleventy-plugin-lazyimages");
-const rollup = require("rollup");
-const commonjs = require("@rollup/plugin-commonjs");
-const { babel } = require("@rollup/plugin-babel");
-const { terser } = require("rollup-plugin-terser");
-const { nodeResolve } = require("@rollup/plugin-node-resolve");
 
 module.exports = (eleventyConfig) => {
   // Copy images
@@ -47,23 +42,7 @@ module.exports = (eleventyConfig) => {
           );
         });
     });
-
-    const bundle = await rollup.rollup({
-      input: `src/js/index.js`,
-      plugins: [nodeResolve(), commonjs(), babel(), terser()],
-    });
-
-    const { output } = await bundle.generate({
-      file: `build/js/bundle.js`,
-      format: "iife",
-    });
-
-    fsExtra.outputFile("build/js/bundle.js", output[0].code, (err) => {
-      if (err) throw err;
-      console.log(`Built JS`);
-    });
   });
-
   // Plugins
 
   eleventyConfig.addPlugin(syntaxHighlight);
