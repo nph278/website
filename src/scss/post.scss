@@ -1,0 +1,14 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    border: var(--primary) solid 2px;
+    padding-left: 1rem;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}

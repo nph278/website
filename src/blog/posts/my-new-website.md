@@ -1,6 +1,7 @@
 ---
 title: My new website
 tags: post
+summary: My new website is done!
 ---
 
 This is my new website! Build with [11ty](https://11ty.dev) and [sass (SCSS)](https://sass-lang.com/).

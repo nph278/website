@@ -10,11 +10,13 @@ title: Blog
 <ul>
   {% for post in collections.post %}
     <li>
-      <a href="{{post.url}}"
-      {% if page.url == post.url %}
-      aria-current="page"
-      {% endif %}
-    >{{post.data.title}}</a>
+      <a href="{{post.url}}">
+        <h2>{{post.data.title}}</h2>
+        <p>
+          {{post.data.summary}}
+        </p>
+      </a>
+
     </li>
   {% endfor %}
 </ul>

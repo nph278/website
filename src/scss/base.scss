@@ -1,8 +1,10 @@
-$accent: rgb(48, 48, 230);
-$secondary: rgb(20, 20, 20);
-$primary: rgb(200, 200, 200);
+:root {
+  --accent: rgb(48, 48, 230);
+  --secondary: rgb(20, 20, 20);
+  --primary: rgb(200, 200, 200);
+}
 
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Ubuntu&family=Inconsolata:wdth,wght@73.8,608&display=swap");
 
 /* Resets */
 
@@ -11,8 +13,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Ubuntu", sans-serif;
-  background-color: $secondary;
-  color: $primary;
+  background-color: var(--secondary);
+  color: var(--primary);
 }
 
 * {
@@ -26,16 +28,25 @@ code {
 
 a {
   padding: 0.5rem 1rem;
-  color: $primary;
+  color: var(--primary);
 
   &[aria-current="page"] {
-    color: $accent;
+    color: var(--accent);
     font-weight: bold;
   }
 
   &:visited {
-    color: $primary;
+    color: var(--primary);
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Mono", monospace;
 }
 
 /* Nav */
@@ -48,8 +59,4 @@ nav {
 
 article {
   margin: 2rem;
-
-  h1 {
-    text-decoration: underline;
-  }
 }
