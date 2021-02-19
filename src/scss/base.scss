@@ -27,7 +27,6 @@ code {
 }
 
 a {
-  padding: 0.5rem 1rem;
   color: var(--primary);
 
   &:visited:not([aria-current="page"]) {
@@ -53,6 +52,10 @@ h6 {
 
 nav {
   display: flex;
+
+  a {
+    padding: 0.5rem 1rem;
+  }
 }
 
 /* Article */
