@@ -1,5 +1,5 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const sass = require("dart-sass");
+const sass = require("sass");
 const postcss = require("postcss");
 const postcssPresetEnv = require("postcss-preset-env");
 const postcssCsso = require("postcss-csso");
