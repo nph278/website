@@ -23,7 +23,7 @@
     "postcss": "^8.2.7",
     "postcss-csso": "^5.0.0",
     "postcss-preset-env": "^6.7.0",
-    "rollup": "^2.40.0",
+    "rollup": "^2.42.4",
     "sass": "^1.32.8"
   },
   "dependencies": {
